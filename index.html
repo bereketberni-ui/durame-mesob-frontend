@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ዱራሜ መሶብ - የአንድ ማዕከል አገልግሎት | Durame MESOB One-Stop Service</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-right-controls">
+                <!-- Theme Switcher Button -->
+                <button id="themeToggleBtn" class="theme-toggle" title="ገጽታ ቀይር (Dark/Light)">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <!-- Language Switcher -->
+                <div class="lang-switch">
+                    <i class="fas fa-globe"></i>
+                    <select id="langSelect">
+                        <option value="am">አማርኛ</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-building-columns"></i>
+                <span>ዱራሜ <strong>መሶብ</strong></span>
+            </a>
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="#home" class="active" data-am="መነሻ" data-en="Home">መነሻ</a></li>
+                    <li><a href="#about" data-am="ስለ መሶብ" data-en="About Us">ስለ መሶብ</a></li>
+                    <li><a href="#services" data-am="አገልግሎቶች" data-en="Services">አገልግሎቶች</a></li>
+                    <li><a href="#fees" data-am="ክፍያዎች" data-en="Fees & Schedule">ክፍያዎች</a></li>
+                    <li><a href="#process" data-am="የአገልግሎት ሂደት" data-en="Process">የአገልግሎት ሂደት</a></li>
+                    <li><a href="#map-section" data-am="ካርታ" data-en="Map">ካርታ</a></li>
+                    <li><a href="#contact" data-am="ግንኙነት" data-en="Contact">ግንኙነት</a></li>
+                </ul>
+            </nav>
+            <a href="#appointment" class="btn-primary appointment-btn" id="openAppointmentModal" data-am="ቀጠሮ ይያዙ" data-en="Book Appointment">ቀጠሮ ይያዙ</a>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="badge-tag" data-am="የዱራሜ ከተማ ዲጂታል አገልግሎት ማዕከል" data-en="Durame City Digital Service Center">የዱራሜ ከተማ ዲጂታል አገልግሎት ማዕከል</div>
+            <h1><span id="typedText"></span><span class="cursor">&nbsp;</span></h1>
+            <p data-am="ሁሉንም የመንግስትና የህዝብ አገልግሎቶች በአንድ ቦታ፣ በፍጥነት፣ በግልፅነትና በጥራት ያግኙ። ጊዜዎንና ወጪዎን ይቆጥቡ።" 
+               data-en="Access all government and public services under one roof with speed, transparency, and quality. Save your time and money.">
+               ሁሉንም የመንግስትና የህዝብ አገልግሎቶች በአንድ ቦታ፣ በፍጥነት፣ በግልፅነትና በጥራት ያግኙ። ጊዜዎንና ወጪዎን ይቆጥቡ።
+            </p>
+            <div class="hero-btns">
+                <a href="#services" class="btn-primary" data-am="አገልግሎቶችን ይመልከቱ" data-en="Explore Services">አገልግሎቶችን ይመልከቱ</a>
+                <a href="#about" class="btn-secondary" data-am="ስለ ማዕከሉ ያውቁ" data-en="Learn More">ስለ ማዕከሉ ያውቁ</a>
+            </div>
+            
+            <!-- Real-time Live Search Box -->
+            <div class="hero-search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="የሚፈልጉትን አገልግሎት እዚህ ይፈልጉ (ምሳሌ፡ ፋይዳ፣ ታክስ፣ ውል፣ ባንክ)...">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter Section -->
+    <section class="stats-section">
+        <div class="container stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3 class="counter" data-target="25000">0</h3>
+                <p data-am="የተገለገሉ ዜጎች" data-en="Served Citizens">የተገለገሉ ዜጎች</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-concierge-bell"></i>
+                <h3 class="counter" data-target="16">0</h3>
+                <p data-am="የተቀናጁ ተቋማት" data-en="Integrated Institutions">የተቀናጁ ተቋማት</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <h3 class="counter" data-target="10">0</h3>
+                <p data-am="አማካይ የአገልግሎት ደቂቃ" data-en="Avg. Service Time (Mins)">አማካይ የአገልግሎት ደቂቃ</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-smile"></i>
+                <h3 class="counter" data-target="99">0</h3>
+                <p data-am="% የእርካታ ደረጃ" data-en="% Satisfaction Rate">% የእርካታ ደረጃ</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed About MESOB Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h4 class="section-subtitle" data-am="ስለ ዱራሜ መሶብ ማዕከል" data-en="About Durame MESOB Center">ስለ ዱራሜ መሶብ ማዕከል</h4>
+                <h2 class="section-title" data-am="አንድ ማዕከል - ሁሉን አቀፍ የመንግስትና የህዝብ አገልግሎት" data-en="One Center - Comprehensive Public & Integrated Services">አንድ ማዕከል - ሁሉን አቀፍ የመንግስትና የህዝብ አገልግሎት</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="lead-text" 
+                       data-am="የዱራሜ መሶብ የአንድ ማዕከል አገልግሎት ማዕከል በዱራሜ ከተማና በአካባቢዋ ለሚገኙ ነዋሪዎች የመንግስትና የህዝብ ተቋማት አገልግሎቶችን በአንድ ቦታ ማግኘት የሚያስችል ዘመናዊና የተቀናጀ የመስተንግዶ ተቋም ነው። ማዕከሉ በዲጂታል ቴክኖሎጂ የታገዘ ፈጣን፣ ግልጽ፣ ፍትሃዊና ከሙስና የጸዳ አገልግሎት በመስጠት የህብረተሰቡን እንግልት፣ ወጪና ጊዜ ለመቀነስ በትኩረት ይሰራል።"
+                       data-en="Durame MESOB One-Stop Service Center is a modern, integrated facility providing seamless public and institutional services under one roof for residents of Durame and surrounding areas. Utilizing cutting-edge digital technologies, the center ensures fast, transparent, equitable, and corruption-free delivery.">
+                       የዱራሜ መሶብ የአንድ ማዕከል አገልግሎት ማዕከል በዱራሜ ከተማና በአካባቢዋ ለሚገኙ ነዋሪዎች የመንግስትና የህዝብ ተቋማት አገልግሎቶችን በአንድ ቦታ ማግኘት የሚያስችል ዘመናዊና የተቀናጀ የመስተንግዶ ተቋም ነው።
+                    </p>
+                    <p data-am="የተለያዩ የመንግስት መስሪያ ቤቶችን አሰራር በአንድ አውታረ-መረብ በማገናኘት፣ ህብረተሰቡ ከአንድ መሪያ ቤት ወደ ሌላው የሚንከራተትበትን አሰራር በመቀየር አገልግሎቶችን በተሳለጠ የሰልፍ ማኔጅመንት እና በዲጂታል ሲስተም እንዲያገኝ አድርጓል።"
+                       data-en="By interconnecting various government and public institutions into a single network, the center replaces traditional bureaucracy with automated queue systems and efficient digital workflows.">
+                       የተለያዩ የመንግስት መስሪያ ቤቶችን አሰራር በአንድ አውታረ-መረብ በማገናኘት፣ ህብረተሰቡ ከአንድ መሪያ ቤት ወደ ሌላው የሚንከራተትበትን አሰራር በመቀየር አገልግሎቶችን በተሳለጠ የሰልፍ ማኔጅመንት እና በዲጂታል ሲስተም እንዲያገኝ አድርጓል።
+                    </p>
+                </div>
+
+                <div class="about-vision-mission">
+                    <div class="info-card">
+                        <i class="fas fa-eye card-icon"></i>
+                        <h4 data-am="ራዕያችን" data-en="Our Vision">ራዕያችን</h4>
+                        <p data-am="በሀገራችን የመንግስት አገልግሎት አሰጣጥ ላይ አርአያ የሚሆን፣ በዘመናዊ ቴክኖሎጂ የታገዘና የህዝብ አመኔታ ያተረፈ ቀዳሚ የአንድ ማዕከል አገልግሎት ተቋም መሆን።"
+                           data-en="To become a leading benchmark for modern, technology-driven, and highly trusted one-stop public service centers across the region.">
+                           በሀገራችን የመንግስት አገልግሎት አሰጣጥ ላይ አርአያ የሚሆን፣ በዘመናዊ ቴክኖሎጂ የታገዘና የህዝብ አመኔታ ያተረፈ ቀዳሚ የአንድ ማዕከል አገልግሎት ተቋም መሆን።
+                        </p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-bullseye card-icon"></i>
+                        <h4 data-am="ተልዕኳችን" data-en="Our Mission">ተልዕኳችን</h4>
+                        <p data-am="ዘመናዊ አሰራርን በመተግበር የተቀናጁ የመንግስት አገልግሎቶችን በጥራት፣ በፍጥነት እና በተመሳሳይ ቦታ በማቅረብ የዜጎችን እንግልት ማስወገድ እና የንግድ እንቅስቃሴን ማፋጠን።"
+                           data-en="To eliminate bureaucratic hurdles and boost business operations by providing high-quality, fast, and integrated public services in one transparent location.">
+                           ዘመናዊ አሰራርን በመተግበር የተቀናጁ የመንግስት አገልግሎቶችን በጥራት፣ በፍጥነት እና በተመሳሳይ ቦታ በማቅረብ የዜጎችን እንግልት ማስወገድ እና የንግድ እንቅስቃሴን ማፋጠን።
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-features mt-5">
+                <h3 class="subsection-title" data-am="የማዕከሉ ዋና ዋና ልዩ ባህሪያት" data-en="Key Operational Features">የማዕከሉ ዋና ዋና ልዩ ባህሪያት</h3>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <div>
+                            <h5 data-am="የተቀናጀ የቲኬትና የሰልፍ ሲስተም" data-en="Smart Ticketing System">የተቀናጀ የቲኬትና የሰልፍ ሲስተም</h5>
+                            <p data-am="በዲጂታል ስክሪን የሚመራ የሰልፍ ማኔጅመንት በመተግበር አላስፈላጊ ውካታና መረበሽን ያስቀረ አሰራር።" data-en="Digital queue management reducing waiting confusion and maximizing service speed.">በዲጂታል ስክሪን የሚመራ የሰልፍ ማኔጅመንት በመተግበር አላስፈላጊ ውካታና መረበሽን ያስቀረ አሰራር።</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <i class="fas fa-network-wired"></i>
+                        <div>
+                            <h5 data-am="የተሳለጠ የመረጃ ልውውጥ" data-en="Integrated Data Exchange">የተሳለጠ የመረጃ ልውውጥ</h5>
+                            <p data-am="በተቋማት መካከል የሚደረግ ፈጣን የኔትወርክ ግንኙነት በመስጠት የሰነዶች ማረጋገጥ ሂደትን ያቀልጣል።" data-en="Seamless network interconnectivity between institutions for instant document verification.">በተቋማት መካከል የሚደረግ ፈጣን የኔትወርክ ግንኙነት በመስጠት የሰነዶች ማረጋገጥ ሂደትን ያቀልጣል።</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <i class="fas fa-user-shield"></i>
+                        <div>
+                            <h5 data-am="ግልጽነትና ከሙስና የጸዳ አሰራር" data-en="Transparency & Accountability">ግልጽነትና ከሙስና የጸዳ አሰራር</h5>
+                            <p data-am="እያንዳንዱ አገልግሎት ክፍያና ሂደት በሲስተም የሚመዘገብ በመሆኑ ለብልሹ አሰራር በር ይዘጋል።" data-en="All transaction steps and fees are digitally tracked to ensure complete integrity and zero corruption.">እያንዳንዱ አገልግሎት ክፍያና ሂደት በሲስተም የሚመዘገብ በመሆኑ ለብልሹ አሰራር በር ይዘጋል።</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <i class="fas fa-wheelchair"></i>
+                        <div>
+                            <h5 data-am="ለሁሉም አካታች መስተንግዶ" data-en="Inclusive Accessibility">ለሁሉም አካታች መስተንግዶ</h5>
+                            <p data-am="ለአካል ጉዳተኞች፣ ለነፍሰ ጡሮችና ለታላላቅ ሰዎች ቅድሚያ የሚሰጥ ልዩ የመስተንግዶ መስኮት።" data-en="Specialized priority counters and access routes tailored for senior citizens and persons with disabilities.">ለአካል ጉዳተኞች፣ ለነፍሰ ጡሮችና ለታላላቅ ሰዎች ቅድሚያ የሚሰጥ ልዩ የመስተንግዶ መስኮት።</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="integrated-windows-section mt-5">
+                <h3 class="subsection-title" data-am="በማዕከሉ የሚሰጡ ዋና ዋና የአገልግሎት ዘርፎች" data-en="Integrated Service Sectors">በማዕከሉ የሚሰጡ ዋና ዋና የአገልግሎት ዘርፎች</h3>
+                
+                <div class="windows-grid">
+                    <div class="window-box">
+                        <i class="fas fa-id-card"></i>
+                        <h5 data-am="የሲቪል ምዝገባና የነዋሪነት አገልግሎት" data-en="Civil Status & Vital Events">የሲቪል ምዝገባና የነዋሪነት አገልግሎት</h5>
+                        <p data-am="የልደት፣ የጋብቻ፣ የሞት ምስክር ወረቀቶች እና የነዋሪነት መታወቂያ እድሳት።" data-en="Birth, marriage, death certificates, and residential identity document renewals.">የልደት፣ የጋብቻ፣ የሞት ምስክር ወረቀቶች እና የነዋሪነት መታወቂያ እድሳት።</p>
+                    </div>
+
+                    <div class="window-box">
+                        <i class="fas fa-briefcase"></i>
+                        <h5 data-am="የንግድና ኢንዱስትሪ ፈቃድ አገልግሎት" data-en="Commercial & Trade Licensing">የንግድና ኢንዱስትሪ ፈቃድ አገልግሎት</h5>
+                        <p data-am="የንግድ ፈቃድ ማውጣት፣ ማደስ፣ የስም ለውጥ እና የንግድ ምዝገባ ስራዎች።" data-en="New commercial registration, license renewals, amendments, and name reservations.">የንግድ ፈቃድ ማውጣት፣ ማደስ፣ የስም ለውጥ እና የንግድ ምዝገባ ስራዎች።</p>
+                    </div>
+
+                    <div class="window-box">
+                        <i class="fas fa-calculator"></i>
+                        <h5 data-am="የታክስና የገቢዎች አገልግሎት" data-en="Tax & Revenue Services">የታክስና የገቢዎች አገልግሎት</h5>
+                        <p data-am="የቲን (TIN) ቁጥር ማውጣት፣ የታክስ ማጽጃ (Clearance) እና ክፍያዎች።" data-en="TIN generation, tax clearance issuance, and automated government tax collections.">የቲን (TIN) ቁጥር ማውጣት፣ የታክስ ማጽጃ (Clearance) እና ክፍያዎች።</p>
+                    </div>
+
+                    <div class="window-box">
+                        <i class="fas fa-file-contract"></i>
+                        <h5 data-am="ውልና ሰነዶች ማረጋገጫ" data-en="Document Authentication & Notary">ውልና ሰነዶች ማረጋገጫ</h5>
+                        <p data-am="የውል ስምምነቶች፣ የውክልና ማስረጃዎች እና የተለያዩ ህጋዊ ሰነዶች ማረጋገጥ።" data-en="Notary services, power of attorney authentications, and official contract registrations.">የውል ስምምነቶች፣ የውክልና ማስረጃዎች እና የተለያዩ ህጋዊ ሰነዶች ማረጋገጥ።</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h4 data-am="የምንሰጣቸው አገልግሎቶች" data-en="Our Services">የምንሰጣቸው አገልግሎቶች</h4>
+                <h2 data-am="በመሶብ ማዕከል የሚሰጡ ሰፊ ዋና ዋና አገልግሎቶች" data-en="Core Services Available at MESOB">በመሶብ ማዕከል የሚሰጡ ሰፊ ዋና ዋና አገልግሎቶች</h2>
+            </div>
+            <div class="services-grid" id="servicesGrid">
+                
+                <!-- Service 1: Fayda -->
+                <div class="service-card fayda-card" data-title="ፋይዳ ብሔራዊ መታወቂያ fayda national id">
+                    <span class="service-tag tag-green">ብሔራዊ አገልግሎት</span>
+                    <div class="icon-wrapper icon-green"><i class="fas fa-id-card"></i></div>
+                    <h4>ፋይዳ ብሔራዊ መታወቂያ (Fayda ID)</h4>
+                    <p>የፋይዳ ዲጂታል ብሔራዊ መታወቂያ ምዝገባ፣ የባዮሜትሪክ መረጃ (የጣት አሻራ፣ የዐይን አይሪስ) ስብሰባ፣ የካርድ ሕትመትና ስርጭት አገልግሎት።</p>
+                    <ul class="req-list">
+                        <li><i class="fas fa-chevron-right"></i> የታደሰ የቀበሌ መታወቂያ / የልደት ሰርተፊኬት</li>
+                        <li><i class="fas fa-chevron-right"></i> ስልክ ቁጥር እና የነዋሪነት ማረጋገጫ</li>
+                    </ul>
+                    <button class="btn-service btn-green select-service-btn" data-service="Fayda ID">ቀጠሮ ይያዙ</button>
+                </div>
+
+                <!-- Service 2: DARS -->
+                <div class="service-card dars-card" data-title="የሰነዶች ማረጋገጫ dars document authentication ውል">
+                    <span class="service-tag tag-brown">ህጋዊ ሰነዶች</span>
+                    <div class="icon-wrapper icon-brown"><i class="fas fa-file-signature"></i></div>
+                    <h4>የሰነዶች ማረጋገጫና ምዝገባ (DARS)</h4>
+                    <p>የተለያዩ የውል፣ የሽያጭ፣ የውክልና (Power of Attorney)፣ የኪራይና የንብረት ማስተላለፍ ህጋዊ ሰነዶችን ማረጋገጥና መመዝገብ።</p>
+                    <ul class="req-list">
+                        <li><i class="fas fa-chevron-right"></i> የዋና ዋና ተዋዋዮች ህጋዊ መታወቂያ</li>
+                        <li><i class="fas fa-chevron-right"></i> የሰነዱ ረቂቅ እና ምስክሮች</li>
+                    </ul>
+                    <button class="btn-service btn-brown select-service-btn" data-service="Document Authentication">ቀጠሮ ይያዙ</button>
+                </div>
+
+                <!-- Service 3: Tax & Revenues -->
+                <div class="service-card tax-card" data-title="የገቢዎችና ታክስ tax tin number ግብር">
+                    <span class="service-tag tag-slate">ፋይናንስና ታክስ</span>
+                    <div class="icon-wrapper icon-slate"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h4>የገቢዎችና ታክስ አገልግሎት</h4>
+                    <p>የግብር ከፋይ መለያ ቁጥር (TIN) ማውጣትና ማደስ፣ የንግድ ግብር ማሳወቅ፣ የደረጃ 'ሐ' ግብር ማስላትና ክፍያ መቀበል።</p>
+                    <ul class="req-list">
+                        <li><i class="fas fa-chevron-right"></i> የንግድ ፈቃድ ወይም የታደሰ መታወቂያ</li>
+                        <li><i class="fas fa-chevron-right"></i> የኪራይ ውል ወይም የቤት ቁጥር</li>
+                    </ul>
+                    <button class="btn-service btn-slate select-service-btn" data-service="Revenues & Tax">ቀጠሮ ይያዙ</button>
+                </div>
+
+                <!-- Service 4: Banking -->
+                <div class="service-card bank-card" data-title="የባንክና የገንዘብ ዝውውር banking cbe bank">
+                    <span class="service-tag tag-blue">ባንክና ክፍያ</span>
+                    <div class="icon-wrapper icon-blue"><i class="fas fa-university"></i></div>
+                    <h4>የባንክና የገንዘብ ዝውውር</h4>
+                    <p>የኢትዮጵያ ንግድ ባንክና የህብረት ስራ ባንክ አገልግሎት windows - የሂሳብ ከፈታ፣ የመንግስት ክፍያዎች መቀበያና የትራንስፎርሜሽን አገልግሎት።</p>
+                    <ul class="req-list">
+                        <li><i class="fas fa-chevron-right"></i> የታደሰ መታወቂያ እና የጉርድ ፎቶ</li>
+                        <li><i class="fas fa-chevron-right"></i> የመጀመሪያ ማስገቢያ ገንዘብ</li>
+                    </ul>
+                    <button class="btn-service btn-blue select-service-btn" data-service="Banking Services">ቀጠሮ ይያዙ</button>
+                </div>
+
+                <!-- Service 5: Ethio Telecom -->
+                <div class="service-card tele-card" data-title="ኢትዮ ቴሌኮም ethio telecom sim telebirr ቴሌብር">
+                    <span class="service-tag tag-teal">ቴሌኮም</span>
+                    <div class="icon-wrapper icon-teal"><i class="fas fa-mobile-alt"></i></div>
+                    <h4>ኢትዮ ቴሌኮም አገልግሎት</h4>
+                    <p>የሲም ካርድ ሽያጭና ምዝገባ፣ የጠፋ ሲም ምትክ ማውጣት፣ የቴሌብር (Telebirr) መረጃ ማስተካከያና የብሮድባንድ ኢንተርኔት ጥያቄዎች።</p>
+                    <ul class="req-list">
+                        <li><i class="fas fa-chevron-right"></i> ህጋዊ መታወቂያ / ፋይዳ ቁጥር</li>
+                        <li><i class="fas fa-chevron-right"></i> በስም የተመዘገበ ስልክ ቁጥር</li>
+                    </ul>
+                    <button class="btn-service btn-teal select-service-btn" data-service="Ethio Telecom">ቀጠሮ ይያዙ</button>
+                </div>
+
+                <!-- Service 6: Ethio Post -->
+                <div class="service-card post-card" data-title="የኢትዮጵያ ፖስታ ethio post mail ems">
+                    <span class="service-tag tag-purple">ፖስታና መልእክት</span>
+                    <div class="icon-wrapper icon-purple"><i class="fas fa-envelope-open-text"></i></div>
+                    <h4>የኢትዮጵያ ፖስታ አገልግሎት</h4>
+                    <p>የሀገር ውስጥና የውጭ ሀገር ፈጣን መልእክት (EMS)፣ የፓርሰል አገልግሎት፣ የፖስታ ሳጥን ኪራይና የመንግስት ሰነዶች መላኪያ።</p>
+                    <ul class="req-list">
+                        <li><i class="fas fa-chevron-right"></i> የላኪና የተቀባይ ሙሉ አድራሻ</li>
+                        <li><i class="fas fa-chevron-right"></i> የተላኪው እቃ ህጋዊነት ማረጋገጫ</li>
+                    </ul>
+                    <button class="btn-service btn-purple select-service-btn" data-service="Ethio Post">ቀጠሮ ይያዙ</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Fees & Timetable Table Section -->
+    <section id="fees" class="fees-section">
+        <div class="container">
+            <div class="section-header">
+                <h4 data-am="የአገልግሎት ክፍያዎችና ጊዜ" data-en="Fees & Timetable">የአገልግሎት ክፍያዎችና ጊዜ</h4>
+                <h2 data-am="ግልፅ የአገልግሎት ክፍያና የፈጀው ጊዜ" data-en="Transparent Pricing & Service Duration">ግልፅ የአገልግሎት ክፍያና የሚወስደው ጊዜ</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="fees-table">
+                    <thead>
+                        <tr>
+                            <th>የአገልግሎት ዓይነት</th>
+                            <th>አስፈላጊ ሰነዶች</th>
+                            <th>የአገልግሎት ክፍያ</th>
+                            <th>የሚወስደው ጊዜ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ፋይዳ ብሔራዊ መታወቂያ</strong></td>
+                            <td>የቀበሌ መታወቂያ / የልደት ሰርተፊኬት</td>
+                            <td><span class="badge-free">ነፃ (Free)</span></td>
+                            <td>15 - 20 ደቂቃ</td>
+                        </tr>
+                        <tr>
+                            <td><strong>የTIN ቁጥር ማውጣት</strong></td>
+                            <td>መታወቂያ + የንግድ ፈቃድ/ውል</td>
+                            <td><span class="badge-free">ነፃ (Free)</span></td>
+                            <td>10 - 15 ደቂቃ</td>
+                        </tr>
+                        <tr>
+                            <td><strong>የውል ማረጋገጫ (DARS)</strong></td>
+                            <td>የተዋዋዮች መታወቂያ + ሰነድ</td>
+                            <td>እንደ ውሉ ዓይነት (በህግ መሰረት)</td>
+                            <td>20 - 30 ደቂቃ</td>
+                        </tr>
+                        <tr>
+                            <td><strong>የሲም ካርድ ምትክ/ሽያጭ</strong></td>
+                            <td>መታወቂያ + የጣት አሻራ</td>
+                            <td>50.00 ብር</td>
+                            <td>5 - 10 ደቂቃ</td>
+                        </tr>
+                        <tr>
+                            <td><strong>የባንክ ሂሳብ ከፈታ</strong></td>
+                            <td>መታወቂያ + 2 ጉርድ ፎቶ</td>
+                            <td><span class="badge-free">ነፃ (Free)</span></td>
+                            <td>10 ደቂቃ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Step Process -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h4 data-am="የአገልግሎት አሰጣጥ ሂደት" data-en="How It Works">የአገልግሎት አሰጣጥ ሂደት</h4>
+                <h2 data-am="በ 4 ቀላል ደረጃዎች የሚጠናቀቅ አገልግሎት" data-en="Get Served in 4 Simple Steps">በ 4 ቀላል ደረጃዎች የሚጠናቀቅ አገልግሎት</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="step-num">01</div>
+                    <h4 data-am="መረጃና ማስረጃ ማዘጋጀት" data-en="Prepare Documents">መረጃና ማስረጃ ማዘጋጀት</h4>
+                    <p data-am="ለሚፈልጉት አገልግሎት የሚያስፈልጉ ቅድመ-ሁኔታዎችን እና ህጋዊ መታወቂያዎችን ማዘጋጀት።" data-en="Prepare required identification and legal supporting documents.">ለሚፈልጉት አገልግሎት የሚያስፈልጉ ቅድመ-ሁኔታዎችን እና ህጋዊ መታወቂያዎችን ማዘጋጀት።</p>
+                </div>
+                <div class="process-card">
+                    <div class="step-num">02</div>
+                    <h4 data-am="ቀጠሮ መያዝ ወይም መግባት" data-en="Book or Walk-In">ቀጠሮ መያዝ ወይም መግባት</h4>
+                    <p data-am="በዌብሳይቱ ቀጠሮ መያዝ ወይም በቀጥታ ወደ ማዕከሉ በመምጣት የቲኬት ቁጥር መቀበል።" data-en="Book online or visit directly to retrieve a queue ticket.">በዌብሳይቱ ቀጠሮ መያዝ ወይም በቀጥታ ወደ ማዕከሉ በመምጣት የቲኬት ቁጥር መቀበል።</p>
+                </div>
+                <div class="process-card">
+                    <div class="step-num">03</div>
+                    <h4 data-am="አገልግሎት ማግኘት" data-en="Service Processing">አገልግሎት ማግኘት</h4>
+                    <p data-am="ቁጥርዎ ሲጠራ ወደ ተመደበው የመስተንግዶ መስኮት በመሄድ በባለሙያ መስተናገድ።" data-en="Proceed to the assigned service window when your ticket is called.">ቁጥርዎ ሲጠራ ወደ ተመደበው የመስተንግዶ መስኮት በመሄድ በባለሙያ መስተናገድ።</p>
+                </div>
+                <div class="process-card">
+                    <div class="step-num">04</div>
+                    <h4 data-am="ውጤትና ማረጋገጫ መቀበል" data-en="Receive Result">ውጤትና ማረጋገጫ መቀበል</h4>
+                    <p data-am="የተጠናቀቀውን ሰነድ፣ መታወቂያ ወይም ደረሰኝ ተቀብለው ሂደቱን ማጠናቀቅ።" data-en="Receive completed document, ID, or receipt confirmation.">የተጠናቀቀውን ሰነድ፣ መታወቂያ ወይም ደረሰኝ ተቀብለው ሂደቱን ማጠናቀቅ።</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h4 data-am="ተደጋጋሚ ጥያቄዎች" data-en="Frequently Asked Questions">ተደጋጋሚ ጥያቄዎች</h4>
+                <h2 data-am="የተለመዱ ጥያቄዎች እና መልሶቻቸው" data-en="Got Questions? We Have Answers">የተለመዱ ጥያቄዎች እና መልሶቻቸው</h2>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-am="የመሶብ ማዕከል ስራ ሰዓት እንዴት ነው?" data-en="What are the working hours of MESOB?">የመሶብ ማዕከል ስራ ሰዓት እንዴት ነው?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-am="ከሰኞ እስከ አርብ ከጠዋቱ 2:00 እስከ 11:00 እንዲሁም ቅዳሜ ከጠዋቱ 2:00 እስከ ቀኑ 6:00 ክፍት ነው።" data-en="Monday to Friday 8:00 AM - 5:00 PM (Continuous) and Saturdays 8:00 AM - 12:00 PM.">ከሰኞ እስከ አርብ ከጠዋቱ 2:00 እስከ ምሽቱ 11:00 (ያለ ምሳ እረፍት) እንዲሁም ቅዳሜ ከጠዋቱ 2:00 እስከ ቀኑ 6:00 ክፍት ነው።</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-am="ለፋይዳ መታወቂያ ለመመዝገብ ክፍያ ይጠየቃል?" data-en="Is there a fee for Fayda ID registration?">ለፋይዳ መታወቂያ ለመመዝገብ ክፍያ ይጠየቃል?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-am="አይ፣ የፋይዳ ዲጂታል ብሔራዊ መታወቂያ ምዝገባ ሙሉ በሙሉ ነፃ አገልግሎት ነው።" data-en="No, Fayda National ID registration is completely free of charge.">አይ፣ የፋይዳ ዲጂታል ብሔራዊ መታወቂያ ምዝገባ ሙሉ በሙሉ ነፃ አገልግሎት ነው።</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-am="በኦንላይን ቀጠሮ መያዝ ግዴታ ነው?" data-en="Is booking online mandatory?">በኦንላይን ቀጠሮ መያዝ ግዴታ ነው?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-am="ግዴታ አይደለም፤ ነገር ግን በኦንላይን ቀጠሮ መያዝ ሰልፍ ለመቀነስና በተመደበልዎ ሰዓት ፈጣን አስተናጋጅነት ለማግኘት ይረዳዎታል።" data-en="Not mandatory, but booking online guarantees faster service without waiting in long queues.">ግዴታ አይደለም፤ ነገር ግን በኦንላይን ቀጠሮ መያዝ ሰልፍ ለመቀነስና በተመደበልዎ ሰዓት ፈጣን አስተናጋጅነት ለማግኘት ይረዳዎታል።</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map-section" class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h4 data-am="አድራሻችን በካርታ" data-en="Our Location">አድራሻችን በካርታ</h4>
+                <h2 data-am="የዱራሜ መሶብ ማዕከል የት ይገኛል?" data-en="Find Us in Durame City">የዱራሜ መሶብ ማዕከል የት ይገኛል?</h2>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15833.08342893815!2d37.830000000000006!3d7.233333300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b3d36e2f1839db%3A0x8e82d1ab553f1d33!2sDurame!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Modal -->
+    <div class="custom-modal" id="appointmentModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h3>የቀጠሮ ቅጽ (Book Appointment)</h3>
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label for="appCat">የአገልግሎት ዓይነት</label>
+                    <select id="appCat" required>
+                        <option value="">አገልግሎት ይምረጡ...</option>
+                        <option value="Fayda ID">ፋይዳ ብሔራዊ መታወቂያ</option>
+                        <option value="Document Authentication">የሰነዶች ማረጋገጫ (DARS)</option>
+                        <option value="Revenues & Tax">የገቢዎችና ታክስ</option>
+                        <option value="Banking Services">የባንክ አገልግሎት</option>
+                        <option value="Ethio Telecom">ኢትዮ ቴሌኮም</option>
+                        <option value="Ethio Post">የኢትዮጵያ ፖስታ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appName">ሙሉ ስም</label>
+                    <input type="text" id="appName" placeholder="ስምዎን ያስገቡ" required>
+                </div>
+                <div class="form-group">
+                    <label for="appPhone">ስልክ ቁጥር</label>
+                    <input type="tel" id="appPhone" placeholder="09..." required>
+                </div>
+                <div class="form-group">
+                    <label for="appDate">የቀጠሮ ቀን</label>
+                    <input type="date" id="appDate" required>
+                </div>
+                <button type="submit" class="submit-btn">ቀጠሮውን አረጋግጥ</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== Back-end Connection Test Section ===== -->
+    <section style="padding: 40px 0; background-color: #f4f6f9;">
+        <div class="container" style="text-align: center;">
+            <h2>ከBack-end Server ጋር የመገናኛ ሙከራ</h2>
+            <div style="margin-top: 15px;">
+                <input type="text" id="userInput" placeholder="አንድ ነገር ጻፍ..." style="padding: 10px; width: 250px; border: 1px solid #ccc; border-radius: 4px;">
+                <button onclick="sendMessage()" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">ላክ (Send)</button>
+            </div>
+            <p id="responseArea" style="font-weight: bold; color: green; margin-top: 15px;"></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" style="background-color: #1a252f; color: #fff; padding: 50px 0 20px 0;">
+        <div class="container">
+            <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-bottom: 30px;">
+                <!-- About Column -->
+                <div class="footer-col">
+                    <h3 style="color: #007bff; margin-bottom: 15px;">ዱራሜ መሶብ</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">
+                        የዱራሜ ከተማ ዲጂታል የአንድ ማዕከል አገልግሎት መስጫ ተቋም። ሁሉንም የመንግስትና የህዝብ አገልግሎቶች በአንድ ቦታ ያገኛሉ።
+                    </p>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="footer-col">
+                    <h4 style="margin-bottom: 15px; border-bottom: 2px solid #007bff; display: inline-block; padding-bottom: 5px;">ፈጣን ማፈንጠጫዎች</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;"><a href="#home" style="color: #cbd5e1; text-decoration: none;">መነሻ</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#about" style="color: #cbd5e1; text-decoration: none;">ስለ መሶብ</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#services" style="color: #cbd5e1; text-decoration: none;">አገልግሎቶች</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#fees" style="color: #cbd5e1; text-decoration: none;">ክፍያዎች</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="footer-col">
+                    <h4 style="margin-bottom: 15px; border-bottom: 2px solid #007bff; display: inline-block; padding-bottom: 5px;">አድራሻና ግንኙነት</h4>
+                    <p style="margin-bottom: 8px; color: #cbd5e1;"><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: #007bff;"></i> ዱራሜ ከተማ፣ ማዕከላዊ ኢትዮጵያ</p>
+                    <p style="margin-bottom: 8px; color: #cbd5e1;"><i class="fas fa-phone" style="margin-right: 8px; color: #007bff;"></i> +251 46 000 0000</p>
+                    <p style="margin-bottom: 8px; color: #cbd5e1;"><i class="fas fa-envelope" style="margin-right: 8px; color: #007bff;"></i> info@duramemesob.gov.et</p>
+                </div>
+
+                <!-- Social Links Column -->
+                <div class="footer-col">
+                    <h4 style="margin-bottom: 15px; border-bottom: 2px solid #007bff; display: inline-block; padding-bottom: 5px;">ማህበራዊ ሚዲያ</h4>
+                    <div style="display: flex; gap: 12px; margin-top: 10px;">
+                        <a href="#" style="color: #fff; background: #007bff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: #fff; background: #007bff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" style="color: #fff; background: #007bff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #334155; margin: 20px 0;">
+
+            <div class="footer-bottom" style="text-align: center; color: #94a3b8; font-size: 0.9rem;">
+                <p>&copy; 2026 ዱራሜ መሶብ የአንድ ማዕከል አገልግሎት። መብቱ በህግ የተጠበቀ ነው።</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Link -->
+    <script src="script.js"></script>
+</body>
+</html>
