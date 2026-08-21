@@ -35,9 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 12. Service Selection Handler for Appointment Modal
     setupServiceSelection();
 });
-
-// Backend API Base URL Configuration
-const API_BASE_URL = 'http://localhost:5000/api'; // እንደ backend port ቁጥርህ አስተካክለው
+// 0. Render Back-end API Connection
+const API_BASE_URL = 'https://durame-mesob-backend.onrender.com/api';
 
 /**
  * 1. Typewriter Animation
