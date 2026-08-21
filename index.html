@@ -579,4 +579,36 @@
 </div>
 </html>
 </body>
+<!-- Durame MESOB AI Chatbot Widget -->
+<div class="chatbot-wrapper">
+    <!-- Chatbot Toggle Button -->
+    <button id="chatbot-toggle-btn" class="chatbot-toggle-btn" aria-label="Open Chatbot">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container" class="chatbot-container" style="display: none;">
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <i class="fas fa-robot"></i>
+                <div>
+                    <h4>መሶብ ረዳት (Mesob AI)</h4>
+                    <span>በመስመር ላይ አለሁ</span>
+                </div>
+            </div>
+            <button id="chatbot-close-btn" class="chatbot-close-btn">&times;</button>
+        </div>
+
+        <div id="chatbot-messages" class="chatbot-messages">
+            <!-- Messages will appear here dynamically -->
+        </div>
+
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbot-input" placeholder="ጥያቄዎን እዚህ ይጻፉ..." autocomplete="off">
+            <button id="chatbot-send-btn" class="chatbot-send-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
 </html>
